@@ -3,7 +3,7 @@ title: "Contextual MLS Remove Proposals"
 abbrev: "CRP"
 category: info
 
-docname: draft-kohbrok-mls-contextual-remove-latest
+docname: draft-kohbrok-mls-contextual-remove.md-latest
 submissiontype: IETF  # also: "independent", "editorial", "IAB", or "IRTF"
 number:
 date:
@@ -23,9 +23,9 @@ venue:
 
 author:
  -
-    fullname: Your Name Here
+    fullname: "Konrad Kohbrok"
     organization: Your Organization Here
-    email: your.email@example.com
+    email: "konrad.kohbrok@datashrine.de"
 
 normative:
 
