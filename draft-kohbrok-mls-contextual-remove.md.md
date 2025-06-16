@@ -19,22 +19,20 @@
 # Change the file extension to match the format (.xml for XML, etc...)
 #
 ###
-title: "TODO - Your title"
-abbrev: "TODO - Abbreviation"
+title: "Contextual MLS Remove Proposals"
+abbrev: "CRP"
 category: info
 
-docname: draft-todo-yourname-protocol-latest
+docname: draft-kohbrok-mls-contextual-remove-latest
 submissiontype: IETF  # also: "independent", "editorial", "IAB", or "IRTF"
 number:
 date:
 consensus: true
 v: 3
 area: AREA
-workgroup: WG Working Group
+workgroup: MLS
 keyword:
- - next generation
- - unicorn
- - sparkling distributed ledger
+ - mls
 venue:
   group: WG
   type: Working Group
