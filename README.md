@@ -1,13 +1,13 @@
 <!-- regenerate: on (set to off if you edit this file) -->
 
-# Contextual MLS Remove Proposals
+# Leaf Operation Intents
 
-This is the working area for the individual Internet-Draft, "Contextual MLS Remove Proposals".
+This is the working area for the individual Internet-Draft, "Leaf Operation Intents".
 
-* [Editor's Copy](https://kkohbrok.github.io/draft-kohbrok-mls-contextual-remove/#go.draft-kohbrok-mls-contextual-remove.md.html)
-* [Datatracker Page](https://datatracker.ietf.org/doc/draft-kohbrok-mls-contextual-remove.md)
-* [Individual Draft](https://datatracker.ietf.org/doc/html/draft-kohbrok-mls-contextual-remove.md)
-* [Compare Editor's Copy to Individual Draft](https://kkohbrok.github.io/draft-kohbrok-mls-contextual-remove/#go.draft-kohbrok-mls-contextual-remove.md.diff)
+* [Editor's Copy](https://kkohbrok.github.io/draft-kohbrok-mls-contextual-remove/#go.draft-kohbrok-mls-leaf-operation-intents.html)
+* [Datatracker Page](https://datatracker.ietf.org/doc/draft-kohbrok-mls-leaf-operation-intents)
+* [Individual Draft](https://datatracker.ietf.org/doc/html/draft-kohbrok-mls-leaf-operation-intents)
+* [Compare Editor's Copy to Individual Draft](https://kkohbrok.github.io/draft-kohbrok-mls-contextual-remove/#go.draft-kohbrok-mls-leaf-operation-intents.diff)
 
 
 ## Contributing
