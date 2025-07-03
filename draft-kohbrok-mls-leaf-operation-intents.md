@@ -189,7 +189,7 @@ clients should use regular Update, Remove or SelfRemove proposals instead.
 # IANA Considerations
 
 This document requests the addition of a new Proposal Type under the heading of
-"Messaging Layer Security". 
+"Messaging Layer Security".
 
 The `leaf_operation_intent` MLS Proposal Type is used to allow members or
 external sender to convey the intent of a leaf owner to perform an operation on
