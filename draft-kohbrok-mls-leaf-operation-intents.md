@@ -19,7 +19,7 @@ venue:
   mail: "mls@ietf.org"
   arch: "https://mailarchive.ietf.org/arch/browse/mls/"
   github: "kkohbrok/draft-kohbrok-mls-leaf-operation-intents"
-  latest: "https://kkohbrok.github.io/draft-kohbrok-mls-contextual-remove/draft-kohbrok-mls-leaf-operation-intents.html"
+  latest: "https://kkohbrok.github.io/draft-kohbrok-mls-leaf-operation-intents/draft-kohbrok-mls-leaf-operation-intents.html"
 
 author:
  -
