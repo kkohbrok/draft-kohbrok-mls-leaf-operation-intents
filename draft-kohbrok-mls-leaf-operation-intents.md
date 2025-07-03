@@ -18,8 +18,8 @@ venue:
   type: "Working Group"
   mail: "mls@ietf.org"
   arch: "https://mailarchive.ietf.org/arch/browse/mls/"
-  github: "kkohbrok/draft-kohbrok-mls-contextual-remove"
-  latest: "https://kkohbrok.github.io/draft-kohbrok-mls-contextual-remove/draft-kohbrok-mls-contextual-remove.html"
+  github: "kkohbrok/draft-kohbrok-mls-leaf-operation-intents"
+  latest: "https://kkohbrok.github.io/draft-kohbrok-mls-contextual-remove/draft-kohbrok-mls-leaf-operation-intents.html"
 
 author:
  -
