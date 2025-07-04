@@ -4,8 +4,8 @@
 
 Messaging Layer Security                                      K. Kohbrok
 Internet-Draft                                               Phoenix R&D
-Intended status: Informational                               3 July 2025
-Expires: 4 January 2026
+Intended status: Informational                               4 July 2025
+Expires: 5 January 2026
 
 
                          Leaf Operation Intents
@@ -58,7 +58,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 4 January 2026.
+   This Internet-Draft will expire on 5 January 2026.
 
 Copyright Notice
 
@@ -120,7 +120,7 @@ Table of Contents
 
    HashReference LeafNodeRef;
 
-   MakeProposalRef(value)
+   MakeLeafNodeRef(value)
      = RefHash("MLS 1.0 LeafNode Reference", value)
 
    enum {
@@ -160,13 +160,15 @@ Table of Contents
      LeafOperationIntent intent;
    }
 
+   LeafNode, RefHash and SignWithLabel are as defined in [RFC9420].
+
    *  group_id: The ID of the group in which context the
       LeafOperationIntent was sent
 
    *  sender_index: The index of the sender's leaf in the group
 
-   *  leaf_ref: A hash computed over the leaf of the sender as specified
-      above
+   *  leaf_ref: A hash computed over the LeafNode of the sender using
+      the MakeLeafNodeRef function
 
    *  intent: The intent and a potential payload
 
@@ -194,11 +196,16 @@ Table of Contents
 2.2.  Processing a LeafOperationProposal
 
    Recipients of a LeafOperationProposal MUST perform the following
-   steps on the intent contained in the proposal. - Verify that the
-   group_id matches the group in which the proposal was sent - Verify
-   that the leaf_ref is the LeafRef of the leaf at the sender_index -
-   Verify the signature over the intent using the signature public key
-   in the leaf at the sender_index
+   steps on the intent contained in the proposal.
+
+   *  Verify that the group_id matches the group in which the proposal
+      was sent
+
+   *  Verify that the leaf_ref is the LeafRef of the leaf at the
+      sender_index
+
+   *  Verify the signature over the intent using the signature public
+      key in the leaf at the sender_index
 
    After that, the proposal MUST be validated and processed as if it
    were a Remove or Update proposal (depending on the type of the
