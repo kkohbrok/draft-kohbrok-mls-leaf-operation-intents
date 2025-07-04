@@ -87,7 +87,7 @@ group members or to one or more external senders.
 ~~~ tls
 HashReference LeafNodeRef;
 
-MakeProposalRef(value)
+MakeLeafNodeRef(value)
   = RefHash("MLS 1.0 LeafNode Reference", value)
 
 enum {
@@ -128,10 +128,13 @@ struct LeafOperationProposal {
 }
 ~~~
 
+LeafNode, RefHash and SignWithLabel are as defined in {{!RFC9420}}.
+
 - `group_id`: The ID of the group in which context the LeafOperationIntent was
   sent
 - `sender_index`: The index of the sender's leaf in the group
-- `leaf_ref`: A hash computed over the leaf of the sender as specified above
+- `leaf_ref`: A hash computed over the LeafNode of the sender using the
+  MakeLeafNodeRef function
 - `intent`: The intent and a potential payload
 - `signature`: A signature over all fields except the signature itself using the
   sender's leaf signature key
@@ -156,6 +159,7 @@ Recipients of a LeafOperationIntent can include it in a LeafOperationProposal.
 
 Recipients of a LeafOperationProposal MUST perform the following steps on the
 `intent` contained in the proposal.
+
 - Verify that the `group_id` matches the group in which the proposal was sent
 - Verify that the `leaf_ref` is the LeafRef of the leaf at the `sender_index`
 - Verify the `signature` over the `intent` using the signature public key in the
