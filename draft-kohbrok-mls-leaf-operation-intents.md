@@ -118,7 +118,7 @@ struct {
 
 struct {
   LeafOperationIntent intent;
-} LeafOperationProposal 
+} LeafOperationProposal
 ~~~
 
 RefHash and SignWithLabel are as defined in {{!RFC9420}}.
@@ -143,7 +143,7 @@ entire user as opposed to just the sending client.
 
 A group member creates a LeafOperationIntent by populating the `group_id`,
 `sender_index` and `sender_leaf_ref` according to the current state of the group
-and the sender's leaf. 
+and the sender's leaf.
 
 If the sender wants to signal the removal of any associated members, it can set
 the `removal_mode` accordingly.
@@ -165,7 +165,7 @@ Recipients of a LeafOperationProposal MUST perform the following steps on the
 - Verify the `signature` over the `intent` using the signature public key in the
   leaf at the `sender_index`
 - If `removal_mode` is `remove_associated_members`, check with the
-  authentication service (AS, see {{RFC9750}}) whether any other members of the
+  authentication service (AS, see {{!RFC9750}}) whether any other members of the
   group are associated with the sender
 
 If any of the validation steps fail, the recipient MUST consider the proposal
