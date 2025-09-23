@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2025-09-21T00:17:13.203935+00:00",
+  "timestamp": "2025-09-23T00:15:50.490373+00:00",
   "repo": "kkohbrok/draft-kohbrok-mls-leaf-operation-intents",
   "labels": [
     {
@@ -50,5 +50,32 @@
     }
   ],
   "issues": [],
-  "pulls": []
+  "pulls": [
+    {
+      "number": 1,
+      "id": "PR_kwDOO8YPls6pxLoX",
+      "title": "feat: allow removal of associated members",
+      "url": "https://github.com/kkohbrok/draft-kohbrok-mls-leaf-operation-intents/pull/1",
+      "state": "OPEN",
+      "author": "kkohbrok",
+      "authorAssociation": "OWNER",
+      "assignees": [],
+      "labels": [],
+      "body": "",
+      "createdAt": "2025-09-22T07:28:45Z",
+      "updatedAt": "2025-09-22T07:29:55Z",
+      "baseRepository": "kkohbrok/draft-kohbrok-mls-leaf-operation-intents",
+      "baseRefName": "main",
+      "baseRefOid": "3394f3760532cd39f1e9a7ad6898f9dd4aa295c5",
+      "headRepository": "kkohbrok/draft-kohbrok-mls-leaf-operation-intents",
+      "headRefName": "konrad/multi-client",
+      "headRefOid": "4272d07a587dde73cd06b775bc9260f74363e20f",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [],
+      "reviews": []
+    }
+  ]
 }
