@@ -221,7 +221,7 @@ communicates its intent to leave a group. In most cases, association is
 determined by Credentials of the individual group members.
 
 A set of clients could, for example, be considered associated if all clients
-belong to the same user. 
+belong to the same user.
 
 # Security Considerations
 
