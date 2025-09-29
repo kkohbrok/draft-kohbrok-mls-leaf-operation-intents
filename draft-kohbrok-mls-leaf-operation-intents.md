@@ -139,6 +139,23 @@ This can be useful if the sender is part of a group of associated devices, e.g.,
 multiple devices belonging to the same user, to facilitate the leaving of the
 entire user as opposed to just the sending client.
 
+## LeafOperationIntent WireFormat
+
+A LeafOperationIntent is an MLS WireFormat and extends the select statement in
+the definition of MLSMessage as follows:
+
+~~~ tls
+struct {
+    ProtocolVersion version = mls10;
+    WireFormat wire_format;
+    select (MLSMessage.wire_format) {
+      ...
+      case mls_leaf_operation_intent:
+        LeafOperationIntent leaf_operation_intent;
+    };
+} MLSMessage;
+~~~
+
 ## Creating and proposing a LeafOperationIntent
 
 A group member creates a LeafOperationIntent by populating the `group_id`,
@@ -184,10 +201,6 @@ the intent (not the sender of the LeafOperationProposal).
 External commits may include one or more LeafOperationProposals. Any Removes
 validated as described above MUST thus be considered valid in this context.
 
-Open questions:
-
-- Do we want to have an MLS wire format for LeafOperationIntent?
-
 ## Additional AS role
 
 When using LeafOperationIntents, the AS gains the additional role of having to
@@ -220,6 +233,8 @@ with the same KeyPackage, the intent can be replayed.
 
 # IANA Considerations
 
+## MLS Proposal Types
+
 This document requests the addition of a new Proposal Type under the heading of
 "Messaging Layer Security".
 
@@ -232,6 +247,21 @@ their leaf.
 * Recommended: Y
 * External: Y
 * Path Required: Y
+* Reference: RFCXXXX
+
+## MLS WireFormats
+
+This document requests the addition of a new Wire Format under the heading of
+"Messaging Layer Security".
+
+The `mls_leaf_operation_intent` MLS WireFormat allows parties to send MLSMessages
+containing a LeafOperationIntent.
+
+* Value: TBD
+* Name: mls_leaf_operation_intent
+* Recommended: Y
+* Reference: RFCXXXX
+
 
 --- back
 
