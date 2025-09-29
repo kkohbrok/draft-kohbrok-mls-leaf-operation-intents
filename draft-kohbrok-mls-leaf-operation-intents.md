@@ -169,34 +169,44 @@ Finally the sender creates the signature by calling `SignWithLabel` on the
 LeafOperationIntentTBS populated as described above with
 "LeafOperationIntentTBS" as label.
 
-Recipients of a LeafOperationIntent can include it in a LeafOperationProposal.
+## Processing a LeafOperationIntent
 
-## Processing a LeafOperationProposal
-
-Recipients of a LeafOperationProposal MUST perform the following steps on the
-`intent` contained in the proposal.
+Recipients of a LeafOperationIntent MUST perform the following steps:
 
 - Verify that the `group_id` matches the group in which the proposal was sent
 - Verify that the `sender_leaf_ref` is the LeafRef of the leaf at the
   `sender_index`
 - Verify the `signature` over the `intent` using the signature public key in the
   leaf at the `sender_index`
-- If `removal_mode` is `remove_associated_members`, check with the
-  authentication service (AS, see {{!RFC9750}}) whether any other members of the
-  group are associated with the sender
 
 If any of the validation steps fail, the recipient MUST consider the proposal
 invalid.
 
-After that, the proposal MUST be validated and processed as if it were a Remove
-proposal targeting the sender's leaf.
+If the validation was successful, the recipient MAY create a
+LeafOperationProposal containing the intent and either commit it directly or
+send it to the group.
 
-If `removal_mode` is `remove_associated_members`, the proposal MUST additionally
-be validated and processed as if it were a set of Remove proposals targeting the
-members identified as associated clients by the AS.
+## Processing a LeafOperationProposal
 
-All Remove proposals MUST be treated as if they originated from the sender of
-the intent (not the sender of the LeafOperationProposal).
+Recipients of a LeafOperationProposal MUST perform the checks listed in
+{{processing-a-leafoperationintent}} on the `intent` contained in the proposal.
+
+If any of the validation steps fail, the recipient MUST consider the proposal
+invalid.
+
+After that, the proposal MUST be validated and processed as if it were set of
+Remove proposals originating from the sender of the intent (not the sender of
+the proposal).
+
+The set of Remove proposals consists of one Remove proposal targeting the
+`intent`'s `sender_index`.
+
+Additionally, if `removal_mode` is `remove_associated_members`, the recipient
+MUST check with the authentication service (AS, see {{!RFC9750}}) whether any
+other members of the group are associated with the sender (see
+{{additional-as-role}}). If there are any such members, the set of Remove
+proposals additionally contains one Remove proposal per associated targeting
+that member's leaf index.
 
 External commits may include one or more LeafOperationProposals. Any Removes
 validated as described above MUST thus be considered valid in this context.
@@ -204,12 +214,14 @@ validated as described above MUST thus be considered valid in this context.
 ## Additional AS role
 
 When using LeafOperationIntents, the AS gains the additional role of having to
-identify other members in a group that are associated with the sender of a
-LeafOperationIntent.
+identify other members in a group that are _associated_ with the sender of a
+LeafOperationIntent. The sole purpose of association in this document is to
+determine whether other clients should be removed when a given client
+communicates its intent to leave a group. In most cases, association is
+determined by Credentials of the individual group members.
 
-The association could, for example, be that multiple clients belong to the same
-user. In most cases, the association will be determined by Credentials of the
-individual group members.
+A set of clients could, for example, be considered associated if all clients
+belong to the same user. 
 
 # Security Considerations
 
